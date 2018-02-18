@@ -10,7 +10,7 @@ let users = require('./routes/users');
 let events = require('./routes/events');
 let members = require('./routes/members');
 let participants = require('./routes/participants');
-
+let API_BASE = '/api';
 let app = express();
 
 let mongoose = require('mongoose');
@@ -29,15 +29,17 @@ app.set('view engine', 'ejs');
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({
+  extended: false,
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
-app.use('/events', events);
-app.use('/members', members);
-app.use('/participants', participants);
+app.use(API_BASE+'/', index);
+app.use(API_BASE+'/users', users);
+app.use(API_BASE+'/events', events);
+app.use(API_BASE+'/members', members);
+app.use(API_BASE+'/participants', participants);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
