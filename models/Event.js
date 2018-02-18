@@ -7,6 +7,7 @@ let eventSchema = new Schema({
   end_date: String,
   active: Boolean,
   featured_img: String,
+  featured: Boolean,
   short_desc: String,
   desc: String,
   paid: Boolean,

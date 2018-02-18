@@ -37,4 +37,16 @@ eventsService.saveEvent = function (event, callback) {
   });
 };
 
+eventsService.getFeatured = function (callback) {
+  Event.find({featured: true}, function (err, existingEvents) {
+    if (err) {
+      callback({status: false, message: err});
+    } else if (existingEvents.length == 0) {
+      callback({status: false, message: 'No events.'});
+    } else {
+      callback({status: true, message: existingEvents});
+    }
+  });
+};
+
 module.exports = eventsService;
