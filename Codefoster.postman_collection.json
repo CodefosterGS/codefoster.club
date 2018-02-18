@@ -1,0 +1,167 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Codefoster",
+		"_postman_id": "5b9a5a87-1f6b-a6a6-e62b-c8808281ac25",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "members",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:3000/members/",
+					"request": {
+						"url": "http://localhost:3000/members/",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/members/",
+					"request": {
+						"url": "http://localhost:3000/members/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Ashish Kumar Patel\",\n  \"dob\": \"11/06/1996\",\n  \"contact\": 7869655445,\n  \"designation\": \"President\",\n  \"email\": \"ashish_3805@hotmail.com\",\n  \"active\": true,\n  \"about\": \"\",\n  \"skills\": \"nodejs, c++\",\n  \"std\": \"final\",\n  \"course\": \"BE\",\n  \"branch\": \"IT\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/members/5a894cf61226246678ff6dee",
+					"request": {
+						"url": "http://localhost:3000/members/5a894cf61226246678ff6dee",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "participants",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:3000/participants",
+					"request": {
+						"url": "http://localhost:3000/participants/",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/partcipants/",
+					"request": {
+						"url": "http://localhost:3000/participants/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"name\": \"Uday\",\n\t\t\"contact\": 7869655445,\n\t\t\"email\": \"some_email@gmail.com\",\n\t\t\"address\": \"some address of uday\",\n\t\t\"paid\": false,\n\t\t\"event\": [\"5a8953ca986a506c7ef0d0b6\"]\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/partcipants/5a894cf61226246678ff6dee",
+					"request": {
+						"url": "http://localhost:3000/participants/5a895428986a506c7ef0d0b7",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "events",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:3000/events/",
+					"request": {
+						"url": "http://localhost:3000/events/",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/events/",
+					"request": {
+						"url": "http://localhost:3000/events/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Flick-Shot 2\",\n\t\"start_data\": \"11/12/2019\",\n\t\"end_date\": \"12/12/2019\",\n\t\"active\": true,\n\t\"featured_img\": \"./img/some.jp\",\n\t\"short_desc\": \"here comes the short desc.\",\n\t\"desc\": \"description long one\",\n\t\"paid\": true,\n\t\"amount\": 250,\n\t\"venue\": \"sgsits, inodre\",\n\t\"incharge\": [\"5a894cf61226246678ff6dee\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/events/5a894cf61226246678ff6dee",
+					"request": {
+						"url": "http://localhost:3000/events/5a89536faae4a966f553dbd6",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
