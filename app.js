@@ -10,6 +10,7 @@ let users = require('./routes/users');
 let events = require('./routes/events');
 let members = require('./routes/members');
 let participants = require('./routes/participants');
+let messages = require('./routes/messages');
 let API_BASE = '/api';
 let app = express();
 
@@ -40,6 +41,7 @@ app.use(API_BASE+'/users', users);
 app.use(API_BASE+'/events', events);
 app.use(API_BASE+'/members', members);
 app.use(API_BASE+'/participants', participants);
+app.use(API_BASE + '/messages', messages);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
