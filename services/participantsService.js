@@ -37,4 +37,24 @@ participantsService.saveParticipant = function (participant, callback) {
   });
 };
 
+participantsService.updateParticipant = function (participant, callback) {
+  Participant.findByIdAndUpdate(participant._id, {
+    '$set': participant,
+  }, {
+    new: true,
+  }, function (err, updatedParticipant) {
+    if (err) {
+      callback({
+        status: false,
+        message: err,
+      });
+    } else {
+      callback({
+        status: 'true',
+        message: updatedParticipant,
+      });
+    }
+  });
+};
+
 module.exports = participantsService;

@@ -16,5 +16,10 @@ router.post('/', function (req, res, next) {
   members.saveMember(member, (data)=>res.json(data));
 });
 
+router.put('/', function (req, res, next) {
+  let member = req.body;
+  members.updateMember(member, (data) => res.json(data));
+});
+
 
 module.exports = router;

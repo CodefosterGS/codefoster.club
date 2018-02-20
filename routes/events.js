@@ -20,5 +20,10 @@ router.post('/', function (req, res, next) {
   events.saveEvent(event, (data)=>res.json(data));
 });
 
+router.put('/', function (req, res, next) {
+  let event = req.body;
+  events.updateEvent(event, (data) => res.json(data));
+});
+
 
 module.exports = router;
