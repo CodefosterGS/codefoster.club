@@ -57,4 +57,20 @@ participantsService.updateParticipant = function (participant, callback) {
   });
 };
 
+participantsService.deleteParticipant = function (id, callback) {
+  Participant.findByIdAndRemove(id, function (err, deletedParticipant) {
+    if (err) {
+      callback({
+        status: false,
+        message: err,
+      });
+    } else {
+      callback({
+        status: 'true',
+        message: deletedParticipant,
+      });
+    }
+  });
+};
+
 module.exports = participantsService;

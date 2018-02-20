@@ -106,4 +106,20 @@ eventsService.updateEvent = function (event, callback) {
   });
 };
 
+eventsService.deleteEvent = function (id, callback) {
+  Event.findByIdAndRemove(id, function (err, deletedEvent) {
+    if (err) {
+      callback({
+        status: false,
+        message: err,
+      });
+    } else {
+      callback({
+        status: 'true',
+        message: deletedEvent,
+      });
+    }
+  });
+};
+
 module.exports = eventsService;

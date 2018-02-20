@@ -83,4 +83,20 @@ membersService.updateMember = function (member, callback) {
   });
 };
 
+membersService.deleteMember = function (id, callback) {
+  Member.findByIdAndRemove(id, function (err, deletedMember) {
+    if (err) {
+      callback({
+        status: false,
+        message: err,
+      });
+    } else {
+      callback({
+        status: 'true',
+        message: deletedMember,
+      });
+    }
+  });
+};
+
 module.exports = membersService;

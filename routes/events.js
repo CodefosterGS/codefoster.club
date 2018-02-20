@@ -25,5 +25,9 @@ router.put('/', function (req, res, next) {
   events.updateEvent(event, (data) => res.json(data));
 });
 
+router.delete('/:id', function (req, res, next) {
+  let eventId = req.params.id;
+  events.deleteEvent(eventId, (data) => res.json(data));
+});
 
 module.exports = router;

@@ -16,4 +16,9 @@ router.post('/', function (req, res, next) {
   messages.saveMessage(message, (data) => res.json(data));
 });
 
+router.delete('/:id', function (req, res, next) {
+  let messageId = req.params.id;
+  messages.deleteMessage(messageId, (data) => res.json(data));
+});
+
 module.exports = router;

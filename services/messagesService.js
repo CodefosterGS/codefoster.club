@@ -63,4 +63,20 @@ messagesService.saveMessage = function (message, callback) {
   });
 };
 
+messagesService.deleteMessage = function (id, callback) {
+  Message.findByIdAndRemove(id, function (err, deletedMessage) {
+    if (err) {
+      callback({
+        status: false,
+        message: err,
+      });
+    } else {
+      callback({
+        status: 'true',
+        message: deletedMessage,
+      });
+    }
+  });
+};
+
 module.exports = messagesService;

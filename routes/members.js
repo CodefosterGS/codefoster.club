@@ -21,5 +21,10 @@ router.put('/', function (req, res, next) {
   members.updateMember(member, (data) => res.json(data));
 });
 
+router.delete('/:id', function (req, res, next) {
+  let memberId = req.params.id;
+  members.deleteMember(memberId, (data) => res.json(data));
+});
+
 
 module.exports = router;

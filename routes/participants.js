@@ -21,5 +21,9 @@ router.put('/', function (req, res, next) {
   participants.updateParticipant(participant, (data) => res.json(data));
 });
 
+router.delete('/:id', function (req, res, next) {
+  let participantId = req.params.id;
+  participants.deleteParticipant(participantId, (data) => res.json(data));
+});
 
 module.exports = router;
